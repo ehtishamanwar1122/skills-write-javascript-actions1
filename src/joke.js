@@ -1,18 +1,13 @@
-const request = require("request-promise");
+const { HttpClient } = require('@actions/http-client');
 
-const options = {
-  method: "GET",
-  uri: "https://icanhazdadjoke.com/",
-  headers: {
-    Accept: "application/json",
-    "User-Agent": "Writing JavaScript action GitHub Skills exercise.",
-  },
-  json: true,
-};
+const client = new HttpClient('joke-action');
 
 async function getJoke() {
-  const res = await request(options);
-  return res.joke;
+  const response = await client.getJson('https://icanhazdadjoke.com/', {
+    Accept: 'application/json'
+  });
+
+  return response.result.joke;
 }
 
 module.exports = getJoke;
