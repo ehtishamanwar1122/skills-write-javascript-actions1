@@ -1,10 +1,10 @@
-name: "Joke Action"
-   description: "Fetches a random joke and exposes it as an output"
+name: Dad Joke Action
+description: Returns a random dad joke
 
-   outputs:
-     joke:
-       description: "The fetched joke text"
+outputs:
+  joke:
+    description: The generated dad joke
 
-   runs:
-     using: node24
-     main: dist/index.js
+runs:
+  using: node20
+  main: index.js
