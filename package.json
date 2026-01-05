@@ -4,7 +4,8 @@
   "description": "<img src=\"https://octodex.github.com/images/Professortocat_v2.png\" align=\"right\" height=\"200px\" />",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "ncc build src/main.js -o dist"
   },
   "repository": {
     "type": "git",
@@ -20,8 +21,10 @@
   "homepage": "https://github.com/ehtishamanwar1122/skills-write-javascript-actions1#readme",
   "dependencies": {
     "@actions/core": "^2.0.1",
-    "@vercel/ncc": "^0.38.4",
     "request": "^2.88.2",
     "request-promise": "^4.2.6"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.4"
   }
 }
